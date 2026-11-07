@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import GeoComponent from './components/GeoComponent'
+import fetchEarthquakeData from './fetchEarthquakeData'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [dataJson, setDataJson] = useState(null);
+  useEffect(() => { fetchEarthquakeData().then(setDataJson); }, []);
 
   return (
     <>
@@ -115,6 +119,10 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+      <div style={{ width: '1024px', height: '100vh', position: 'relative' }}>
+        <GeoComponent dataJson={dataJson}></GeoComponent>
+      </div>
+      
     </>
   )
 }
