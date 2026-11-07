@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import GeoComponent from './components/GeoComponent'
+import DepthMagScatterComponent from './components/DepthMagScatterComponent'
 import fetchEarthquakeData from './fetchEarthquakeData'
 
 function App() {
@@ -120,8 +121,9 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
       <div style={{ width: '1024px', height: '100vh', position: 'relative' }}>
-        <GeoComponent dataJson={dataJson}></GeoComponent>
+        <GeoComponent dataJson={dataJson} />
       </div>
+      <DepthMagScatterComponent dataJson={dataJson} />
       
     </>
   )
