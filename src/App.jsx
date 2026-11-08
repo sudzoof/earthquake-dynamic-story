@@ -6,6 +6,7 @@ import './App.css'
 import GeoComponent from './components/GeoComponent'
 import DepthMagScatterComponent from './components/DepthMagScatterComponent'
 import fetchEarthquakeData from './fetchEarthquakeData'
+import DepthMagBoxComponent from './components/DepthMagMagBoxComponent'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -124,6 +125,7 @@ function App() {
         <GeoComponent dataJson={dataJson} />
       </div>
       <DepthMagScatterComponent dataJson={dataJson} />
+      <DepthMagBoxComponent dataJson={dataJson} />
       
     </>
   )
